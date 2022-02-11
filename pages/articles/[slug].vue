@@ -12,21 +12,22 @@ const { data } = await storyapi.get(`cdn/stories/articles/${slug}`, {
 })
 
 onMounted(() => {
-  useStoryBridge(state.story.id, event => {
-    state.story = event
-  })
+  useStoryBridge(state.story.id, story => (state.story = story))
 })
 
-const article = reactive(data.story)
-const bodyContent = computed(() => parse(article.content.body))
+const state = reactive({
+  story: data.story,
+})
+const bodyContent = computed(() => parse(state.story.content.body))
 </script>
 
 <template>
   <div>
     <main class="container max-w-screen-lg mx-auto">
-      <ArticlePost :blok="article.content" />
+      <ArticlePost :blok="state.story.content" />
       <article
-        v-editable="article.content.body"
+        v-if="state.story.content.body"
+        v-editable="state.story.content.body"
         class="prose prose-lg prose-green mt-12 mx-auto"
         v-html="bodyContent"
       ></article>
