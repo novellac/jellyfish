@@ -1,4 +1,6 @@
-# SushiWuut - Storyblok + Nuxt3
+# Storyblok + Nuxt3
+
+Stolen from [sushi by alvaro](https://github.com/alvarosabu/sushi-wuut-storyblok-nuxt3)
 
 > Just a repo example for a recipe app/website using [Storyblok](https://www.storyblok.com/) and [Nuxt3](https://v3.nuxtjs.org/) for the video tutorial [Storyblok + Nuxt - Creating your own food website]() on my Youtube Channel [AlvaroDevLabs](https://www.youtube.com/channel/UC6D2KveNVcuuPqOKp0YWO3w)
 

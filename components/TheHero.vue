@@ -9,24 +9,8 @@ const props = defineProps({
 <template>
   <section class="hero w-full py-16">
     <div
-      class="
-        container
-        mx-auto
-        flex flex-col
-        sm:flex-row
-        px-0
-        sm:px-12
-        justify-between
-        items-center
-      "
+      class="container mx-auto flex flex-col sm:flex-row px-0 sm:px-12 justify-between items-center"
     >
-      <div class="w-full sm:w-1/2 px-8 relative">
-        <img
-          class="w-full mx-auto"
-          src="/sushi-and-chopstick.png"
-          alt="Sushi graphics"
-        />
-      </div>
       <div class="w-full sm:w-1/2 px-8">
         <h1 class="font-display text-shrimp-400 font-extrabold text-3xl mb-12">
           {{ blok.headline }}
