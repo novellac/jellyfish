@@ -12,6 +12,8 @@
     "@vueuse/core": "^7.1.2",
     "animate.css": "^4.1.1",
     "axios": "^0.24.0",
+    "highlight.js": "^11.4.0",
+    "marked": "^4.0.12",
     "nuxt-windicss": "^2.0.12",
     "nuxt3": "latest",
     "sass": "^1.43.5",

@@ -5,6 +5,15 @@ export default defineNuxtConfig({
   alias: {
     '/@': './',
   },
+  meta: {
+    link: [
+      {
+        rel: "stylesheet",
+        type: "text/css",
+        href: "https://unpkg.com/@highlightjs/cdn-assets@11.3.1/styles/night-owl.min.css"
+      }
+    ]
+  },
   publicRuntimeConfig: {
     apiToken: process.env.STORYBLOK_API_KEY,
   },
