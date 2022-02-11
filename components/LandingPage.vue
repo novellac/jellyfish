@@ -8,12 +8,12 @@ const props = defineProps({
 </script>
 
 <template>
-  <div v-editable="blok">
+  <div v-editable="blok" class="px-6">
     <component
-      :is="blok.component"
       v-for="blok in blok.body"
-      :key="blok._id"
+      :key="blok._uid"
       :blok="blok"
+      :is="blok.component"
     />
   </div>
 </template>
