@@ -26,7 +26,7 @@ const sortedFeatureArticles = computed(() => {
         {{ article.full_slug }}
         <ArticleTeaser
           v-if="article.content"
-          :article-link="article.full_slug"
+          :article-link="`/${article.full_slug}`"
           :article-content="article.content"
         />
         <p v-else class="px-4 py-2 text-white bg-red-700 text-center rounded">
