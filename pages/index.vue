@@ -4,19 +4,19 @@ import { useStoryApi, useStoryBridge } from '@storyblok/nuxt/composables'
 const storyapi = useStoryApi()
 
 const { data } = await storyapi.get('cdn/stories/home', {
+  resolve_relations: ['feature-articles.articles'],
   version: 'draft',
 })
 
 onMounted(() => {
-  useStoryBridge(state.story.id, event => {
-    state.story = event
-  })
+  useStoryBridge(state.story.id, story => (state.story = story))
 })
 
 const state = reactive({
   story: data.story,
 })
 </script>
+
 <template>
   <component
     :is="state.story.content.component"
