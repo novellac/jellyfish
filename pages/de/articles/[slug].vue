@@ -13,7 +13,6 @@ const { data } = await storyapi.get(
     version: 'draft',
   },
 )
-console.log('DEFAULT ln13: ', data)
 
 onMounted(() => {
   useStoryBridge(state.story.id, story => (state.story = story))
