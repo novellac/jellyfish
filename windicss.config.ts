@@ -4,6 +4,9 @@ import colors from 'windicss/colors'
 const { black, white, trueGray } = colors
 
 export default defineConfig({
+  plugins: [
+    require('windicss/plugin/typography')
+  ],
   darkMode: 'class', // or 'media' or 'class'
   theme: {
     colors: {
