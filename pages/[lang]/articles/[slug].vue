@@ -8,7 +8,7 @@ const { slug } = route.params
 
 // Get article data
 const { data } = await storyapi.get(
-  `cdn/stories/articles/${slug}?language=de`,
+  `cdn/stories/articles/${slug}?language=${route.params.lang}`,
   {
     version: 'draft',
   },

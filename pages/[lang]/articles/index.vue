@@ -1,10 +1,11 @@
 <script lang="ts" setup>
 import { useStoryApi, useStoryBridge } from '@storyblok/nuxt/composables'
-
 const storyapi = useStoryApi()
+const route = useRoute()
 
+console.log(route.params.lang)
 const { data } = await storyapi.get(
-  'cdn/stories?starts_with=articles&language=de',
+  `cdn/stories?starts_with=articles&language=${route.params.lang}`,
   {
     version: 'draft',
   },
@@ -21,7 +22,9 @@ const state = reactive({
 
 <template>
   <section>
-    <h2 class="py-10 text-center font-bold text-4xl">DEArticles Overview</h2>
+    <h2 class="py-10 text-center font-bold text-4xl">
+      {{ route.params.lang }} Articles Overview
+    </h2>
     <ul class="flex py-6 mb-6">
       <li
         v-for="article in state.story.stories"

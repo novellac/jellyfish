@@ -1,12 +1,15 @@
 <script lang="ts" setup>
 import { useStoryApi, useStoryBridge } from '@storyblok/nuxt/composables'
-
 const storyapi = useStoryApi()
+const route = useRoute()
 
-const { data } = await storyapi.get('cdn/stories/home?language=de', {
-  resolve_relations: ['feature-articles.articles'],
-  version: 'draft',
-})
+const { data } = await storyapi.get(
+  `cdn/stories/home?language=${route.params.lang}`,
+  {
+    resolve_relations: ['feature-articles.articles'],
+    version: 'draft',
+  },
+)
 
 onMounted(() => {
   useStoryBridge(state.story.id, story => (state.story = story))
